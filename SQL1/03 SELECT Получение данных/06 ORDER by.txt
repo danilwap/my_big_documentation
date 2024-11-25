@@ -1,0 +1,4 @@
+ORDER BY name_column - отсортировать по определённой колонке (сортировка по возрастанию)
+ORDER BY column_1 ASC - сортировка по возрастанию
+ORDER BY column_1 DESC - сортировка по убыванию
+ORDER BY name_column, name_column2, name_column3 - сортировка по нескольким колонкам

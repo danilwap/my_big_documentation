@@ -1,0 +1,2 @@
+SELECT * FROM sqlite_master WHERE type='table' -  Получение списка таблиц
+PRAGMA table_info(customer) - Получение информации о столбцах

@@ -1,0 +1,11 @@
+Два способа создать подзапрос:
+1 просто в скобках:WHERE id IN (SELECT id FROM id_table)
+2 с помощью WITH (WITH
+				  subquery AS (Запрос))
+				  
+				  SELECT avg(name)
+				  FROM subquery
+				  
+				  
+				  
+		
