@@ -1,0 +1,11 @@
+Что можно удалять:
+- Определённые строки
+- Все строки
+
+Как использовать:
+DELETE FROM Customers
+WHERE cust_id = 1122222
+
+
+Если надо удалить все строки из таблицы, то лучше использовать TRUNCATE TABLE, в sqllite не существует
+TRUNCATE TABLE Customers

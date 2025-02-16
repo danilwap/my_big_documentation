@@ -1,0 +1,62 @@
+from pydantic import BaseModel - базовая модель
+
+Валидация данных — это процесс проверки данных различных типов по критериям корректности и полезности для конкретного применения.
+Сериализация — это процесс преобразования объекта в поток байтов для сохранения или передачи в память, базу данных или файл. 
+
+class BigClass(BaseModel):
+	примеры базовых валидаций
+	fio: str
+	age: int
+	weight: float
+	accept: bool
+
+
+	более сложные:
+	
+	from typing import Dict, List, Tuple, Set
+	bazam: Dict[]
+	list: List[]
+	tuple: Tuple[]
+	set: set[]
+	very_hard: Dict[str, List[Tuple[int, bool]]]
+
+
+	Literal нужен для списка того, что может использоваться в классе
+	from typing import Literal
+	work: Literal['медицина', 'историк', 'астрофизик']
+
+
+	Annotated вообще он передаёт мета инфомацию, но в FastAPi он проверяет то, что ему передаётся, первым элементом подаётся тип данных, вторым условие
+	Используется для условий
+	from typing import Annotated
+	weight: Annotated[float, Gt(0)]
+    	'Gt',
+    	'Ge',
+    	'Lt',
+    	'Le',
+	'MinLen',
+    	'MaxLen',
+Список всего, что можно использовать в Annotated
+'BaseMetadata', 'GroupedMetadata','Gt', 'Ge', 'Lt', 'Le', 'Interval', 'MultipleOf', 'MinLen', 'MaxLen', 'Len', 'Timezone', 'Predicate', 'LowerCase', 'UpperCase', 'IsDigits', 'IsFinite', 'IsNotFinite', 'IsNan', 'IsNotNan', 'IsInfinite', 'IsNotInfinite', 'doc', 'DocInfo', '__version__',
+
+
+class Foo:
+    """A class docstring.
+
+    Attributes:
+        bar: A description of bar. Defaults to "bar".
+    """
+
+    bar: str = 'bar'
+
+def bar(self, baz: int) -> str:
+    """A function docstring.
+
+    Args:
+        baz: A description of `baz`.
+
+    Returns:
+        A description of the return value.
+    """
+
+    return 'bar'

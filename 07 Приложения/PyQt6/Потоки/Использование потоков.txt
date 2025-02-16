@@ -1,0 +1,28 @@
+Пример класса, который работает в другом потоке:
+class MyThread(QtCore.QThread):
+    mysignal = QtCore.pyqtSignal(str)
+    def __init__(self, parent=None):
+        QtCore.QThread.__init__(self, parent)
+    def run(self):
+        for i in range(1, 5):
+
+            self.mysignal.emit("i = %s" % i)
+            self.sleep(1)
+			
+
+Сначала создаётся объект данного класса
+self.thread = MyThread() # Создаём поток
+
+После добавляем события для запуска данного потока
+self.thread.started.connect(self.on_clicked)
+self.thread.finished.connect(self.on_finished)
+self.thread.mysignal.connect(self.on_change, QtCore.Qt.ConnectionType.QueuedConnection)
+		
+
+
+
+Запуск потока 
+self.thread.start()
+
+Проверка работы потока - 
+self.my_thread.isRunning()

@@ -1,0 +1,7 @@
+Удаление таблиц с foreign_key - внешним ключом
+SET foreign_key_checks = 0;
+DROP TABLE Customers;
+SET foreign_key_checks = 1;
+
+Простое удаление
+DROP TABLE Customers;

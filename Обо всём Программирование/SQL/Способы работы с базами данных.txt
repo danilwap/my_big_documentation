@@ -1,0 +1,3 @@
+https://habr.com/ru/articles/322086/
+часть 1/2: Используем DB-API
+часть 2/2: Используем ORM

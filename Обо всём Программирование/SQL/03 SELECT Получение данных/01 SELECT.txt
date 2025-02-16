@@ -1,0 +1,29 @@
+SELECT - получить
+SELECT * - получить все столбцы
+SELECT name_column, name_column - Получить столбцы с указанными названиями
+SELECT name_column AS new_name_column - получить столбец name_column и дать ему имя new_name_column
+SELECT name_column new_name_column - получить столбец name_column и дать ему имя new_name_column
+SELECT name_function(varieable) as new_name_varieble - Применить функцию
+SELECT 'Какой-то текст' as discount - вставить в колонку дискаунт указанный текст
+
+SELECT DISTINCT user_id - получить уникальные значения, DISTINCT - уникальное
+Агрегрирующие функции:
+COUNT — считает количество значений в колонке.
+count(*) - считает все строки
+count(column) - считает все столбцы не пустота
+
+SUM — вычисляет сумму значений.
+AVG — вычисляет среднее значение.
+MAX — вычисляет максимальное значение.
+MIN — вычисляет минимальное значение.
+
+
+Конструкция CASE
+case
+when условие then что сделать
+ELSE что делать если не подходит под условие
+END as new_price
+
+В селекте можно использовать условие при агрегатных функциях
+SELECT count(DISTINCT user_id) - count(DISTINCT user_id) filter (where action='cancel_order') as users_count
+FROM user_actions

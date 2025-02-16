@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS Orders
+(order_num int NOT NULL,
+order_date datetime NOT NULL, 
+cust_id char(10) NOT NULL DEFAULT '1');
+
+IF NOT EXISTS - если не существует
+DEFAULT '1' - значение по умолчанию
+
+ПОлучение системной даты
+MySQL - CURRANT_DATE()
+PostgresSQL - CURRENT_DATE
+SQLite - date('now')
+Пример: DEFAULT CURRANT_DATE
+
+Добавление столбца в таблицу
+ALTER TABLE Customers
+ADD vend_phone CHAR(20)
+
+Удаление столбца из таблицы, не везде доступно, SQLite не поддерживает
+ALTER TABLE Customers
+DROP COLUMN vend_phone CHAR(20)

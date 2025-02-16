@@ -1,0 +1,7 @@
+Создание приложения
+from fastapi import FastAPI
+
+app = FastAPI()
+
+Добавление роутера
+app.include_router(name_router)

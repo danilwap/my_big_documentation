@@ -1,0 +1,4 @@
+LIMIT - сколько ответов
+OFFSET - сдвиг начала
+
+LIMIT 5 OFFSET 5 

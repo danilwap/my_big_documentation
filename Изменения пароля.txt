@@ -1,0 +1,9 @@
+sudo -u postgres psql - от имени админа заходим в утилиту postgres
+ALTER USER postgres PASSWORD '12345678'; - команда для смены пароля
+CREATE USER bds WITH PASSWORD 'mhvid1'; - команда для создания пользоватлея
+ALTER USER bds CREATEDB; - команда для предоставления прав 
+\q - выход из psql 
+
+DB_HOST = 'localhost'
+--host 0.0.0.0
+--port 8080

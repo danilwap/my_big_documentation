@@ -1,0 +1,57 @@
+РАБОТА С ОБРАЗАМИ
+docker info - информация по контейнерам
+
+docker images или docker image ls - список скаченных образов
+docker images --no-trunc - список скаченных образов без сокращения кэша
+docker images --format '{{.Repository}}:{{.Tag}}' список образов в указанном формате
+
+docker history <obraz> - список слоёв образа
+
+docker rmi <Образ>:<tag> - удалить образ определённой версии
+docker rmi <образ> [образ...] или docker image rm <образ> [образ...] — удалить образ(ы)
+
+
+docker  build . - создать образ из докер файла
+docker build -t qr_bot . - создать образ с указанным тегом
+
+docker pull <Образ> - скачать образ
+docker pull <Образ>:16 - скачать образ определённой версии
+
+
+РАБОТА С КОНТЕЙНЕРАМИ
+docker ps - список рабочих контейнеров
+docker ps -a - список остановленных контейнеров
+docker ps -q - список рабочих контейнеров только id
+docker ps -qa - список остановленных контейнеров только id
+
+$(command) - передаёт то, что возвращает команда, пример использования:
+docker stop $(docker ps -q) 
+
+
+docker run <Образ> - запуска образа
+docker run -d <Образ> - запуска образа в фоновом режиме
+winpty(если на windows) docker run -it <образ> — позволяет «войти» в контейнер во время его создания
+docker run --name my_db -d <Образ> - запуска образа в фоновом режиме с именем, которое я сам укажу
+docker run --name my_db -d -rm <Образ> - запуска образа в фоновом режиме с именем, которое я сам укажу. 
+	-rm - удаляет контейнер сразу после установки
+winpty docker run -it --rm <Образ> - Запуск образа, если нет, то загрузка с dockerhub
+	
+
+docker stop <name> - остановить контейнер
+docker start <name> - запустить остановленный контейнер
+
+docker rm <id or name>:tag - Удалить остановленный контейнер
+
+winpty docker exec <контейнер> команда — запустить команду в работающем контейнер
+winpty docker exec -it <name or id> <programma, example: bash> - запускает программу в запущенном контейнере
+
+docker commit <name_container> <name_obraz> - сохранить текущее состояние в образ
+
+
+docker image prune --all - эти две команды очищают память от неиспользуемых слоёв
+docker system prune -a - Чтобы очистить неиспользуемые контейнеры и изображения
+
+
+
+docker-compose build - Сборка образа из docker-compose
+docker-compose up - установка и запуск из docker-compose

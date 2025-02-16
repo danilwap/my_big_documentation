@@ -1,0 +1,5 @@
+docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 -e MYSQL_DATABASE=my_sql_database -d mysql
+
+-p 3306:3306 - проброс портов
+-e MYSQL_ROOT_PASSWORD=12345 - установка пароля
+-e MYSQL_DATABASE=my_sql_database - имя созданной БД

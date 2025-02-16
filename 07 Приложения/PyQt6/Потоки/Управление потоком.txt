@@ -1,0 +1,9 @@
+Можно добавить в поток переменную и по кнопкам её изменять
+self.running = True
+while self.running:
+	self.count += 1
+	self.my_signal.emit("count = %s" % self.count)
+	self.sleep(1)
+	
+	
+self.my_thread.running = False

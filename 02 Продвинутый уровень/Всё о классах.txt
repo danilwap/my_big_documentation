@@ -1,0 +1,8 @@
+getattr(объект класса, name, {default значение})
+hasattr(object, name)
+setattr(object, name, value) - устанавливает значение
+delattr(objectn , name) - удаляет объект
+del Point.attr - удаление какого-либо атрибута
+
+__doc__ - документация после объявления класса
+__dict__ - набор экземпляров класса

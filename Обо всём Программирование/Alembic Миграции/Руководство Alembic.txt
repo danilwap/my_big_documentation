@@ -1,0 +1,37 @@
+alembic init src/migrations - Инициализация alembic(вводится в самом начале, src/migrations or migrations - 
+создание папки с миграциями, обычно в корне проекта создаётся)
+alembic upgrade head - для сбрасывания ревизий
+alembic revision --autogenerate - для проведение ревизии
+
+После этого в файл env.py модуля migrations нужно импортировать:
+любую таблицу с комментарием #  noqa - from auth.models import User  # noqa
+Таблицу Base, и ссылку на подключение к БД
+
+Добавить в конфиг опцию
+config.set_main_option('sqlalchemy.url', DATABASE_URL + '?async_fallback=True') - Если асинхронная, то добавляем в конце + '?async_fallback=True'
+
+Изменить функцию run_migrations_online
+context.configure(connection=connection, target_metadata=target_metadata, compare_server_default=True)
+
+Передаём все метаданные 
+target_metadata = Base.metadata
+
+делаем ревизию - alembic revision --autogenerate
+Обновляем БД - alembic upgrade head (вместо head можно использовать hash последней ревизии)
+
+Откат к первоначальному состоянию - alembic downgrade base
+
+
+
+
+
+
+
+
+
+Файл Alembic.ini 
+# Путь к миграциям
+script_location = src/migrations
+
+# Рабочая директория
+prepend_sys_path = . src
